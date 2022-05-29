@@ -44,7 +44,18 @@ body{
 <div class="knopka2">
     <a href="error.html">Фатал ерор</a>
     </div>
-  
-  
+ 
+ <div id="zam" contenteditable="true"
+    style="height: 50%; width: 55%; border: solid; border-width: 1px; text-align: left">
+  </div>
+ 
+  <script>
+    if (localStorage.getItem('texti') !== null) {
+      document.getElementById('zam').innerHTML = localStorage.getItem('texti');
+    }
+    document.addEventListener('keydown', function (e) {
+      localStorage.setItem('texti', document.getElementById('zam').innerHTML);
+    });
+  </script>
 </body>
 </html>
